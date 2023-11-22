@@ -21,5 +21,15 @@ int CountOfSymbols(string[] array) { // Функция считает колич
     return count;
 }
 
-string[] array = new string[] {"Moscos", "Hi", "Bye", "Kazan"};
-Console.WriteLine(CountOfSymbols(array));
+void FinalFunction(string[] array) { // Функция выводит новый массив в соответствии с условием задачи.
+    int count = CountOfSymbols(array);
+    int j = 0;
+    string[] desiredArray = new string[count];
+    for(int i = 0; i <= count; i++) {
+        if(array[i].Length < 4) {
+            desiredArray[j] = array[i];
+            j++;
+        }
+    }
+    PrintArray(desiredArray);
+}

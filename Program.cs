@@ -3,6 +3,14 @@
 // задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями, лучше 
 // обойтись исключительно массивами.
 
+string[] PullArray(string[] array) {
+    for(int i = 0; i < array.Length; i++) {
+        Console.Write($"Напишите {i + 1} имя для массива: ");
+        array[i] = Console.ReadLine();
+    }
+    return array;
+}
+
 void PrintArray(string[] array) { // Функция выводит массив.
     Console.Write("[");
     for(int i = 0; i < array.Length; i++) {
@@ -34,5 +42,9 @@ void ArrayFromCondition(string[] array) { // Функция выводит но�
     PrintArray(desiredArray);
 }
 
-string[] array = new string[5] {"Hello", "2","Moscow","Russia","Bye"};
+var rnd = new Random().Next(2, 6);
+string[] array = new string[rnd];
+PullArray(array);
+PrintArray(array);
+Console.Write(" → ");
 ArrayFromCondition(array);
